@@ -1,0 +1,13 @@
+@import "modern-normalize";
+@import "reset.css";
+body {
+  font-family: var(--font-raleway), sans-serif;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #212121;
+  color: azure;
+  margin-top: 75px;
+}
