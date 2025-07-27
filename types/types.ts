@@ -3,3 +3,10 @@ export interface LocaleParams {
     locale: "en" | "uk";
   }>;
 }
+
+export interface Post {
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+}
