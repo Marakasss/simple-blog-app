@@ -1,0 +1,11 @@
+.button {
+  border-radius: 6px;
+  background-color: #212121;
+  color: azure;
+  padding: 8px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}

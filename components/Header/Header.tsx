@@ -2,6 +2,7 @@ import React from "react";
 import css from "./Header.module.css";
 import Link from "next/link";
 import { getDictionary } from "@/language/dictionaries";
+import LanguageSwicher from "../LanguageSwicher/LanguageSwicher";
 
 const Header = async ({
   params,
@@ -27,6 +28,7 @@ const Header = async ({
             </li>
           </ul>
         </nav>
+        <LanguageSwicher />
       </div>
     </header>
   );
