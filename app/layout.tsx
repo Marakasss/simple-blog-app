@@ -1,8 +1,6 @@
 import { Raleway } from "next/font/google";
 import "./globals.css";
 import TanStackProvider from "@/components/TanStackProvider/TanStackProvider";
-import Header from "@/components/Header/Header";
-import Footer from "@/components/Footer/Footer";
 
 //Fonts----------------------------------------
 
@@ -17,7 +15,7 @@ const raleway = Raleway({
 
 //RootLayout----------------------------------------
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   modal,
 }: Readonly<{
@@ -28,10 +26,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={raleway.variable}>
         <TanStackProvider>
-          <Header />
           {children}
           {modal}
-          <Footer />
         </TanStackProvider>
       </body>
     </html>

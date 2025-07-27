@@ -4,13 +4,21 @@ import { SocialIcon } from "react-social-icons";
 import "react-social-icons/github";
 import "react-social-icons/linkedin";
 import "react-social-icons/telegram";
+import { getDictionary } from "@/language/dictionaries";
 
-const Footer = () => {
+const Footer = async ({
+  params,
+}: {
+  params: Promise<{ locale: "en" | "uk" }>;
+}) => {
+  const { locale } = await params;
+  const dict = await getDictionary(locale);
+
   return (
     <footer className={css.footer}>
       <div className={css.container}>
         <div className={css.contacts}>
-          <p>Contact me</p>
+          <p>{dict.contact}</p>
           <div className={css.socials}>
             <SocialIcon
               url="https://github.com/Marakasss"

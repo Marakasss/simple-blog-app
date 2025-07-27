@@ -1,7 +1,7 @@
-import React from "react";
+import { redirect } from "next/navigation";
 
 const HomePage = () => {
-  return <div></div>;
+  redirect("/en");
 };
 
 export default HomePage;
