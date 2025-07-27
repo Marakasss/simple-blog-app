@@ -12,20 +12,24 @@ const Header = async ({ params }: LocaleParams) => {
   return (
     <header className={css.header}>
       <div className={css.container}>
-        <Link className={css.logo} href="/" rel="noopener noreferrer">
+        <Link
+          className={css.logo}
+          href="`/${locale}`"
+          rel="noopener noreferrer"
+        >
           <span className={css.logoSpan}>Simple</span>blog
         </Link>
-        <nav>
+        <nav className={css.navGroup}>
           <ul className={css.navList}>
             <li className={css.navItem}>
-              <Link href={"/"}>{dict.home}</Link>
+              <Link href={`/${locale}`}>{dict.home}</Link>
             </li>
             <li className={css.navItem}>
-              <Link href={"/"}>{dict.about}</Link>
+              <Link href={`/${locale}/about`}>{dict.about}</Link>
             </li>
           </ul>
+          <LanguageSwicher />
         </nav>
-        <LanguageSwicher />
       </div>
     </header>
   );

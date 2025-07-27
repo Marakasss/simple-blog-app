@@ -1,5 +1,11 @@
 {
   "home": "Home",
   "about": "About",
-  "contact": "Contact me"
+  "contact": "Contact me",
+
+  "aboutPage": {
+    "title": "About Our Blog",
+    "description": "This is a small multilingual blog built with Next.js (App Router) and React. It uses the JSONPlaceholder API to fetch posts and display them in a simple, responsive interface.",
+    "features": "Key features include internationalization (i18n), dynamic routing, and integration with external APIs."
+  }
 }
