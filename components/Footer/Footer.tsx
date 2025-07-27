@@ -5,12 +5,9 @@ import "react-social-icons/github";
 import "react-social-icons/linkedin";
 import "react-social-icons/telegram";
 import { getDictionary } from "@/language/dictionaries";
+import { LocaleParams } from "@/types/types";
 
-const Footer = async ({
-  params,
-}: {
-  params: Promise<{ locale: "en" | "uk" }>;
-}) => {
+const Footer = async ({ params }: LocaleParams) => {
   const { locale } = await params;
   const dict = await getDictionary(locale);
 

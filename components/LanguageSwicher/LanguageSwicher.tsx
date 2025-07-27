@@ -9,6 +9,7 @@ const LanguageSwicher = () => {
   const { locale } = useParams();
   const pathname = usePathname();
   const router = useRouter();
+
   const handleSwicher = () => {
     const newLang = locale === "en" ? "uk" : "en";
     const segments = pathname.split("/");

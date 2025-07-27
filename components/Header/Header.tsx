@@ -3,12 +3,9 @@ import css from "./Header.module.css";
 import Link from "next/link";
 import { getDictionary } from "@/language/dictionaries";
 import LanguageSwicher from "../LanguageSwicher/LanguageSwicher";
+import { LocaleParams } from "@/types/types";
 
-const Header = async ({
-  params,
-}: {
-  params: Promise<{ locale: "en" | "uk" }>;
-}) => {
+const Header = async ({ params }: LocaleParams) => {
   const { locale } = await params;
   const dict = await getDictionary(locale);
 
