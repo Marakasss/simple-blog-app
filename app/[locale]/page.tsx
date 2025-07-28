@@ -16,9 +16,11 @@ const Posts = async ({ searchParams }: SearchParams) => {
 
   return (
     <div className={css.container}>
-      <ul>
+      <ul className={css.postList}>
         {posts.map((post) => (
-          <li key={post.id}>{post.title}</li>
+          <li className={css.postCard} key={post.id}>
+            {post.title}
+          </li>
         ))}
       </ul>
       <div className={css.pagination}>

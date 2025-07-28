@@ -6,13 +6,24 @@
   list-style: none;
   padding: 0;
   user-select: none;
-  
+  background-color: #212121;
+  padding: 12px;
+  border-radius: 30px;
 }
 
 .pagination li {
   width: 36px;
   height: 36px;
   background-color: #191919;
+  border-radius: 8px;
+}
+
+.pagination li:first-child {
+  border-radius: 20px 8px 8px 20px;
+}
+
+.pagination li:last-child {
+  border-radius: 8px 20px 20px 8px;
 }
 
 .pagination li:hover {
