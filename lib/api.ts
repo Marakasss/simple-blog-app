@@ -12,7 +12,7 @@ const phApi = axios.create({
 
 export const fetchAllPosts = async (
   page = 1,
-  limit = 20
+  limit = 10
 ): Promise<PostResponse> => {
   const response = await phApi.get<Post[]>("/posts", {
     params: {

@@ -1,20 +1,28 @@
-import Pagination from "@/components/Pagination/Pagination";
+import PaginationClient from "@/components/Pagination/Pagination.client";
 import { fetchAllPosts } from "@/lib/api";
 import React from "react";
 
-const Posts = async () => {
-  const response = await fetchAllPosts();
+interface SearchParams {
+  searchParams?: Promise<{
+    page?: string;
+  }>;
+}
 
-  const data = response.data;
+const Posts = async ({ searchParams }: SearchParams) => {
+  const params = (await searchParams) ?? { page: 1 };
+  const currentPage = Number(params.page || 1);
+  const { data: posts, totalPages } = await fetchAllPosts(currentPage);
 
   return (
     <div>
       <ul>
-        {data.map((post) => (
+        {posts.map((post) => (
           <li key={post.id}>{post.title}</li>
         ))}
       </ul>
-      <div></div>
+      <div>
+        <PaginationClient currentPage={currentPage} totalPages={totalPages} />
+      </div>
     </div>
   );
 };
