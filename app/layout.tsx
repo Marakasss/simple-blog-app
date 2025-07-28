@@ -17,18 +17,13 @@ const raleway = Raleway({
 
 export default async function RootLayout({
   children,
-  modal,
 }: Readonly<{
   children: React.ReactNode;
-  modal: React.ReactNode;
 }>) {
   return (
     <html lang="en">
       <body className={raleway.variable}>
-        <TanStackProvider>
-          {children}
-          {modal}
-        </TanStackProvider>
+        <TanStackProvider>{children}</TanStackProvider>
       </body>
     </html>
   );
