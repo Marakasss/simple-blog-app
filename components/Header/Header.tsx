@@ -14,7 +14,7 @@ const Header = async ({ params }: LocaleParams) => {
       <div className={css.container}>
         <Link
           className={css.logo}
-          href="`/${locale}`"
+          href=`/${locale}`
           rel="noopener noreferrer"
         >
           <span className={css.logoSpan}>Simple</span>blog
