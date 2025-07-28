@@ -1,6 +1,7 @@
 import PaginationClient from "@/components/Pagination/Pagination.client";
 import { fetchAllPosts } from "@/lib/api";
 import React from "react";
+import css from "./Posts.module.css";
 
 interface SearchParams {
   searchParams?: Promise<{
@@ -14,13 +15,13 @@ const Posts = async ({ searchParams }: SearchParams) => {
   const { data: posts, totalPages } = await fetchAllPosts(currentPage);
 
   return (
-    <div>
+    <div className={css.container}>
       <ul>
         {posts.map((post) => (
           <li key={post.id}>{post.title}</li>
         ))}
       </ul>
-      <div>
+      <div className={css.pagination}>
         <PaginationClient currentPage={currentPage} totalPages={totalPages} />
       </div>
     </div>
