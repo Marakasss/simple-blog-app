@@ -14,7 +14,8 @@ const LanguageSwicher = () => {
     const newLang = locale === "en" ? "uk" : "en";
     const segments = pathname.split("/");
     segments[1] = newLang;
-    const newPath = segments.join("/");
+    const query = window.location.search;
+    const newPath = segments.join("/") + query;
     router.push(newPath);
   };
 
