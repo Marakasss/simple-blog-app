@@ -34,7 +34,7 @@
 
 @media (max-width: 768px) {
   .postCard {
-    width: 320px;
+    width: 280px;
     font-size: 14px;
     font-weight: 400;
   }
