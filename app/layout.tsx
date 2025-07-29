@@ -12,6 +12,14 @@ const raleway = Raleway({
 
 //Metadata----------------------------------------
 
+export const metadata = {
+  title: "SimpleBlog",
+  description: "Test task from GoIt",
+  icons: {
+    icon: "https://www.freeiconspng.com/img/10171",
+  },
+};
+
 //RootLayout----------------------------------------
 
 export default async function RootLayout({
