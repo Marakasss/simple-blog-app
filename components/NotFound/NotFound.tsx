@@ -1,17 +1,28 @@
+"use client";
 import React from "react";
 import css from "./NotFound.module.css";
-import { LocaleParams } from "@/types/types";
-import { getDictionary } from "@/language/dictionaries";
+import { usePathname } from "next/navigation";
 
-const NotFound = async ({ params }: LocaleParams) => {
-  const { locale } = await params;
-  const dict = await getDictionary(locale);
+const NotFound = () => {
+  const pathname = usePathname();
+  const locale = pathname.split("/")[1];
 
+  const isUk = locale === "uk";
   return (
     <div className={css.container}>
-      <p>404</p>
-      <p>{dict.notFound.notfound}</p>
-      <p>{dict.notFound.searched}</p>
+      {isUk ? (
+        <>
+          <p>404</p>
+          <p>Сторінка не знайдена</p>
+          <p>Ми шукали, але такої сторінки немає.=)</p>
+        </>
+      ) : (
+        <>
+          <p>404</p>
+          <p>Page not found</p>
+          <p>We searched, but there is no such page.=)</p>
+        </>
+      )}
     </div>
   );
 };
