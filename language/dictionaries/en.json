@@ -13,5 +13,7 @@
   "notFound": {
     "notfound": "Page not found",
     "searched": "We searched, but there is no such page.=)"
-  }
+  },
+
+  "error": "Well, that didn’t go as planned. Try again, it might just work!)"
 }

@@ -4,7 +4,6 @@ import Footer from "@/components/Footer/Footer";
 export async function generateStaticParams() {
   return [{ locale: "en" }, { locale: "uk" }];
 }
-//Metadata----------------------------------------
 
 //RootLayout----------------------------------------
 
@@ -18,7 +17,7 @@ export default async function LocaiizeRootLayout({
   return (
     <>
       <Header params={params} />
-      <main> {children}</main>
+      <main>{children}</main>
       <Footer params={params} />
     </>
   );
