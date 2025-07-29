@@ -37,21 +37,24 @@
 .navList {
   display: flex;
   gap: 12px;
-  border-radius: 0 15px;
-  overflow-x: hidden;
 }
 
 .navItem {
-  background-color: #212121;
-  padding: 16px 22px;
-  border-radius: 0 15px;
-}
-
-.navItem:hover {
-  background-color: #4d4d4d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .navGroup {
   display: flex;
   gap: 28px;
+}
+
+.navLink {
+  padding: 14px 22px;
+  border-radius: 0 15px;
+  background-color: #212121;
+}
+.navLink:hover {
+  background-color: #4d4d4d;
 }

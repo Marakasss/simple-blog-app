@@ -1,6 +1,5 @@
 import { fetchAllPostsIds, fetchPostsById } from "@/lib/api";
 import React from "react";
-import css from "./SinglePost.module.css";
 
 interface SinglePostProps {
   params: Promise<{ id: string }>;
@@ -16,12 +15,10 @@ const SinglePost = async ({ params }: SinglePostProps) => {
   const singlePost = await fetchPostsById(Number(id));
 
   return (
-    <section className={css.singlePostSec}>
-      <div className={css.postCard}>
-        <h2 className={css.title}>{singlePost.title}</h2>
-        <p className={css.post}>{singlePost.body}</p>
-      </div>
-    </section>
+    <div>
+      <h2>{singlePost.title}</h2>
+      <p>{singlePost.body}</p>
+    </div>
   );
 };
 

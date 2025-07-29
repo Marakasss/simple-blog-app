@@ -22,10 +22,14 @@ const Header = async ({ params }: LocaleParams) => {
         <nav className={css.navGroup}>
           <ul className={css.navList}>
             <li className={css.navItem}>
-              <Link href={`/${locale}`}>{dict.home}</Link>
+              <Link className={css.navLink} href={`/${locale}`}>
+                {dict.home}
+              </Link>
             </li>
             <li className={css.navItem}>
-              <Link href={`/${locale}/about`}>{dict.about}</Link>
+              <Link className={css.navLink} href={`/${locale}/about`}>
+                {dict.about}
+              </Link>
             </li>
           </ul>
           <LanguageSwicher />

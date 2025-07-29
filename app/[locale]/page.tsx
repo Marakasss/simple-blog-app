@@ -18,8 +18,6 @@ const Posts = async ({ searchParams, params }: PostsParamsProps) => {
   const currentPage = Number(pageParams.page || 1);
   const { locale } = await params;
   const { data: posts, totalPages } = await fetchAllPosts(currentPage, 20);
-  const test = await fetchAllPostsIds();
-  console.log(test);
 
   return (
     <div className={css.container}>
