@@ -15,7 +15,6 @@ const SinglePost = async ({ params }: SinglePostProps) => {
   console.log(params);
 
   const singlePost = await fetchPostsById(Number(id));
-  console.log(singlePost);
 
   return (
     <div>

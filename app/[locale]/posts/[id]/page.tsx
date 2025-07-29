@@ -13,10 +13,8 @@ export async function generateStaticParams(): Promise<{ id: string }[]> {
 
 const SinglePost = async ({ params }: SinglePostProps) => {
   const { id } = await params;
-  console.log(params);
 
   const singlePost = await fetchPostsById(Number(id));
-  console.log(singlePost);
 
   return (
     <div>
