@@ -1,6 +1,5 @@
 import { Raleway } from "next/font/google";
 import "./globals.css";
-import TanStackProvider from "@/components/TanStackProvider/TanStackProvider";
 
 //Fonts----------------------------------------
 
@@ -22,9 +21,7 @@ export default async function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={raleway.variable}>
-        <TanStackProvider>{children}</TanStackProvider>
-      </body>
+      <body className={raleway.variable}>{children}</body>
     </html>
   );
 }

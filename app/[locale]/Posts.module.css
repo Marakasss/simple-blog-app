@@ -7,6 +7,7 @@
   justify-content: center;
   background-color: #161616;
   max-width: 1440px;
+  width: 100%;
   margin: 0 auto;
   border-radius: 10px;
   padding: 22px;
@@ -46,6 +47,9 @@
   justify-content: center;
   gap: 36px;
   margin-top: 36px;
+  border-left: 3px solid #212121;
+  border-right: 3px solid #212121;
+  padding: 0 32px;
 }
 
 .buttonLink {
