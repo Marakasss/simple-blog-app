@@ -7,6 +7,7 @@ interface SinglePostProps {
 
 export async function generateStaticParams(): Promise<{ id: string }[]> {
   const idsArr = await fetchAllPostsIds();
+  console.log("Static params:", idsArr);
   return idsArr.map((id) => ({ id }));
 }
 
