@@ -1,19 +1,25 @@
 import PaginationClient from "@/components/Pagination/Pagination.client";
-import { fetchAllPosts } from "@/lib/api";
+import { fetchAllPosts, fetchAllPostsIds } from "@/lib/api";
 import React from "react";
 import css from "./Posts.module.css";
 import Link from "next/link";
 
-interface SearchParams {
+interface PostsParamsProps {
   searchParams?: Promise<{
     page?: string;
   }>;
+  params: Promise<{
+    locale: "en" | "uk";
+  }>;
 }
 
-const Posts = async ({ searchParams }: SearchParams) => {
-  const params = (await searchParams) ?? { page: 1 };
-  const currentPage = Number(params.page || 1);
-  const { data: posts, totalPages } = await fetchAllPosts(currentPage);
+const Posts = async ({ searchParams, params }: PostsParamsProps) => {
+  const pageParams = (await searchParams) ?? { page: 1 };
+  const currentPage = Number(pageParams.page || 1);
+  const { locale } = await params;
+  const { data: posts, totalPages } = await fetchAllPosts(currentPage, 20);
+  const test = await fetchAllPostsIds();
+  console.log(test);
 
   return (
     <div className={css.container}>
@@ -21,7 +27,11 @@ const Posts = async ({ searchParams }: SearchParams) => {
         {posts.map((post) => (
           <li key={post.id} className={css.postCard}>
             <p>{post.title}</p>
-            <Link className={css.buttonLink} key={post.id} href={"/"}>
+            <Link
+              className={css.buttonLink}
+              key={post.id}
+              href={`/${locale}/posts/${post.id}`}
+            >
               <span>More</span>
             </Link>
           </li>

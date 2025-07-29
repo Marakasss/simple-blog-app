@@ -11,8 +11,8 @@ const phApi = axios.create({
 });
 
 export const fetchAllPosts = async (
-  page = 1,
-  limit = 10
+  page: number = 1,
+  limit: number = 10
 ): Promise<PostResponse> => {
   const response = await phApi.get<Post[]>("/posts", {
     params: {
@@ -25,4 +25,15 @@ export const fetchAllPosts = async (
     data: response.data,
     totalPages: Math.ceil(totalCount / limit),
   };
+};
+
+export const fetchPostsById = async (id: number): Promise<Post> => {
+  const response = await phApi.get<Post>(`/posts/${id}`);
+  return response.data;
+};
+
+export const fetchAllPostsIds = async (): Promise<string[]> => {
+  const response = await phApi.get<Post[]>("/posts");
+  const idsArr = response.data.map((post: Post) => post.id.toString());
+  return idsArr;
 };
