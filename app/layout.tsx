@@ -16,7 +16,7 @@ export const metadata = {
   title: "SimpleBlog",
   description: "Test task from GoIt",
   icons: {
-    icon: "https://www.freeiconspng.com/img/10171",
+    icon: "./favicon.png",
   },
 };
 
