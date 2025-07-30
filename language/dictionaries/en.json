@@ -3,6 +3,10 @@
   "about": "About",
   "contact": "Contact me",
   "more": "More",
+  "error": "Well, that didn’t go as planned. Try again, it might just work!)",
+  "developer": "Developer: Ihor Petriv",
+  "rights": "All rights reserved.",
+  "loading": "Loading...",
 
   "aboutPage": {
     "title": "About Our Blog",
@@ -13,7 +17,5 @@
   "notFound": {
     "notfound": "Page not found",
     "searched": "We searched, but there is no such page.=)"
-  },
-
-  "error": "Well, that didn’t go as planned. Try again, it might just work!)"
+  }
 }

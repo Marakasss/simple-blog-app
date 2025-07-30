@@ -1,7 +1,6 @@
 import Loader from "@/components/Loader/Loader";
-import React from "react";
 
-const Loading = () => {
+const Loading = async () => {
   return <Loader />;
 };
 
