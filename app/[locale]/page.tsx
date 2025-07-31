@@ -77,6 +77,7 @@ const Posts = async ({ searchParams, params }: PostsParamsProps) => {
                 className={css.buttonLink}
                 key={post.id}
                 href={`/${locale}/posts/${post.id}`}
+                aria-label={`Read more about ${post.title}`}
               >
                 <span>{dict.more}</span>
               </Link>
