@@ -6,7 +6,7 @@ import { Metadata } from "next";
 
 const raleway = Raleway({
   subsets: ["latin"],
-  weight: ["400", "700", "800", "900"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
   variable: "--font-montserat",
   display: "swap",
 });
