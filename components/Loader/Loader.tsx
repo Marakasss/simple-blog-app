@@ -1,8 +1,6 @@
 "use client";
-
 import css from "./Loader.module.css";
 import { FadeLoader } from "react-spinners";
-
 import { useDictionary } from "@/language/dictionaryContext";
 
 const Loader = () => {

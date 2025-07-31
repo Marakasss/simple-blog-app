@@ -1,6 +1,7 @@
 import { fetchAllPostsIds, fetchPostsById } from "@/lib/api";
 import React from "react";
 import css from "./SinglePost.module.css";
+import { capitalize } from "@/lib/helpers";
 
 interface SinglePostProps {
   params: Promise<{ id: string }>;
@@ -18,8 +19,8 @@ const SinglePost = async ({ params }: SinglePostProps) => {
   return (
     <section className={css.singlePostSec}>
       <div className={css.postCard}>
-        <h2 className={css.title}>{singlePost.title}</h2>
-        <p className={css.post}>{singlePost.body}</p>
+        <h2 className={css.title}>{capitalize(singlePost.title)}</h2>
+        <p className={css.post}>{capitalize(singlePost.body)}</p>
       </div>
     </section>
   );

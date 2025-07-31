@@ -14,8 +14,7 @@
     "features": "Key features include internationalization (i18n), dynamic routing, and integration with external APIs."
   },
 
-  "notFound": {
-    "notfound": "Page not found",
-    "searched": "We searched, but there is no such page.=)"
+  "metadata": {
+    "description": "Тest task for participation in a volunteer project"
   }
 }

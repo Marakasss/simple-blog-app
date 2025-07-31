@@ -3,6 +3,8 @@ import Footer from "@/components/Footer/Footer";
 import DictionaryProvider from "@/components/DictionaryProvider/DictionaryProvider";
 import { getDictionary } from "@/language/dictionaries";
 
+//https://nextjs.org/docs/app/guides/internationalization
+
 export async function generateStaticParams() {
   return [{ locale: "en" }, { locale: "uk" }];
 }
@@ -20,6 +22,7 @@ export default async function LocaiizeRootLayout({
   const dictionary = await getDictionary(locale);
 
   return (
+    // DictionaryProvider for future client components
     <DictionaryProvider dictionary={dictionary}>
       <Header params={params} />
       <main>{children}</main>

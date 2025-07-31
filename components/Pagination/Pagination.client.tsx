@@ -13,7 +13,6 @@ const PaginationClient = ({
   currentPage,
 }: PaginationClientProps) => {
   const router = useRouter();
-
   const { locale } = useParams();
 
   const handlePageChange = (page: number) => {

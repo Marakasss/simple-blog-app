@@ -14,8 +14,7 @@ export interface Dictionary {
     features: string;
   };
 
-  notFound: {
-    notfound: string;
-    searched: string;
+  metadata: {
+    description: string;
   };
 }

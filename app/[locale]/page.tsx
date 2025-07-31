@@ -4,6 +4,10 @@ import React from "react";
 import css from "./Posts.module.css";
 import Link from "next/link";
 import { getDictionary } from "@/language/dictionaries";
+import { capitalize } from "@/lib/helpers";
+import { Metadata } from "next";
+
+//Props-------------------------------------------
 
 interface PostsParamsProps {
   searchParams?: Promise<{
@@ -13,6 +17,45 @@ interface PostsParamsProps {
     locale: "en" | "uk";
   }>;
 }
+
+//Metadata----------------------------------------
+
+export const generateMetadata = async ({
+  params,
+}: PostsParamsProps): Promise<Metadata> => {
+  const { locale } = await params;
+  const { metadata } = await getDictionary(locale);
+  const descr = "Тest task for participation in a volunteer project";
+
+  return {
+    title: "SimpleBlog",
+    description: metadata.description || descr,
+    openGraph: {
+      title: "SimpleBlog",
+      description: metadata.description || descr,
+      url: `https://simple-blog-app-zeta.vercel.app/${locale}`,
+      siteName: "SimpleBlog",
+      images: [
+        {
+          url: "https://simple-blog-app-zeta.vercel.app/meta-pic.png",
+          width: 1200,
+          height: 630,
+          alt: "SimpleBlog",
+        },
+      ],
+
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "SimpleBlog",
+      description: metadata.description || descr,
+      images: ["https://simple-blog-app-zeta.vercel.app/meta-pic.png"],
+    },
+  };
+};
+
+// Posts component----------------------------------------
 
 const Posts = async ({ searchParams, params }: PostsParamsProps) => {
   const pageParams = (await searchParams) ?? { page: 1 };
@@ -27,7 +70,7 @@ const Posts = async ({ searchParams, params }: PostsParamsProps) => {
         <ul className={css.postList}>
           {posts.map((post) => (
             <li key={post.id} className={css.postCard}>
-              <p>{post.title}</p>
+              <p>{capitalize(post.title)}</p>
               <Link
                 className={css.buttonLink}
                 key={post.id}
