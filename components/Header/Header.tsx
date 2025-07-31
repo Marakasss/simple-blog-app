@@ -7,7 +7,7 @@ import { LocaleParams } from "@/types/types";
 
 const Header = async ({ params }: LocaleParams) => {
   const { locale } = await params;
-  const dict = await getDictionary(locale);
+  const { home, about } = await getDictionary(locale);
 
   return (
     <header className={css.header}>
@@ -23,12 +23,12 @@ const Header = async ({ params }: LocaleParams) => {
           <ul className={css.navList}>
             <li className={css.navItem}>
               <Link className={css.navLink} href={`/${locale}`}>
-                {dict.home}
+                {home}
               </Link>
             </li>
             <li className={css.navItem}>
               <Link className={css.navLink} href={`/${locale}/about`}>
-                {dict.about}
+                {about}
               </Link>
             </li>
           </ul>

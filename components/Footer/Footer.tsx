@@ -9,17 +9,17 @@ import { LocaleParams } from "@/types/types";
 
 const Footer = async ({ params }: LocaleParams) => {
   const { locale } = await params;
-  const dict = await getDictionary(locale);
+  const { developer, contact, rights } = await getDictionary(locale);
 
   return (
     <footer className={css.footer}>
       <div className={css.container}>
         <div className={css.contacts}>
           <p>
-            © {new Date().getFullYear()} SIMPLEBLOG. {dict.rights}
+            © {new Date().getFullYear()} SIMPLEBLOG. {rights}
           </p>
-          <p>{dict.developer}</p>
-          <p>{dict.contact}</p>
+          <p>{developer}</p>
+          <p>{contact}</p>
           <div className={css.socials}>
             <SocialIcon
               url="https://github.com/Marakasss"

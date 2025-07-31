@@ -24,15 +24,17 @@ export const generateMetadata = async ({
   params,
 }: PostsParamsProps): Promise<Metadata> => {
   const { locale } = await params;
-  const { metadata } = await getDictionary(locale);
+  const {
+    metadata: { description },
+  } = await getDictionary(locale);
   const descr = "Тest task for participation in a volunteer project";
 
   return {
     title: "SimpleBlog",
-    description: metadata.description || descr,
+    description: description || descr,
     openGraph: {
       title: "SimpleBlog",
-      description: metadata.description || descr,
+      description: description || descr,
       url: `https://simple-blog-app-zeta.vercel.app/${locale}`,
       siteName: "SimpleBlog",
       images: [
@@ -49,7 +51,7 @@ export const generateMetadata = async ({
     twitter: {
       card: "summary_large_image",
       title: "SimpleBlog",
-      description: metadata.description || descr,
+      description: description || descr,
       images: ["https://simple-blog-app-zeta.vercel.app/meta-pic.png"],
     },
   };
