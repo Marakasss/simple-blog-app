@@ -1,5 +1,6 @@
 import { Raleway } from "next/font/google";
 import "./globals.css";
+import { Metadata } from "next";
 
 //Fonts----------------------------------------
 
@@ -12,11 +13,31 @@ const raleway = Raleway({
 
 //Metadata----------------------------------------
 
-export const metadata = {
+const description = "Тest task for participation in a volunteer project";
+
+export const metadata: Metadata = {
   title: "SimpleBlog",
-  description: "Test task from GoIt",
-  icons: {
-    icon: "./favicon.ico",
+  description,
+  openGraph: {
+    title: "SimpleBlog",
+    description,
+    url: "https://simple-blog-app-zeta.vercel.app",
+    siteName: "SimpleBlog",
+    images: [
+      {
+        url: "https://simple-blog-app-zeta.vercel.app/meta-pic.png",
+        width: 1200,
+        height: 630,
+        alt: "SimpleBlog",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SimpleBlog",
+    description,
+    images: ["https://simple-blog-app-zeta.vercel.app/meta-pic.png"],
   },
 };
 

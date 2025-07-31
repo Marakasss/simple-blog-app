@@ -15,7 +15,7 @@ const Footer = async ({ params }: LocaleParams) => {
     <footer className={css.footer}>
       <div className={css.container}>
         <div className={css.contacts}>
-          <p>
+          <p className={css.rights}>
             © {new Date().getFullYear()} SIMPLEBLOG. {rights}
           </p>
           <p>{developer}</p>
