@@ -54,6 +54,7 @@
   padding: 14px 22px;
   border-radius: 0 15px;
   background-color: #212121;
+  white-space: nowrap;
 }
 .navLink:hover {
   background-color: #4d4d4d;
